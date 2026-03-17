@@ -8,7 +8,10 @@ const PagoExitoso = () => {
     const verificarPago = async () => {
       try {
         const params = new URLSearchParams(window.location.search);
-        const paymentId = params.get("payment_id");
+
+        // 🔥 SOPORTAR AMBOS CASOS (MUY IMPORTANTE)
+        const paymentId =
+          params.get("payment_id") || params.get("collection_id");
 
         if (!paymentId) {
           setError("No se encontró el payment_id");
@@ -16,7 +19,7 @@ const PagoExitoso = () => {
         }
 
         const response = await fetch(
-          "https://tranform-cv-production.up.railway.app/pago/verificar",
+          "https://tranform-cv-production.up.railway.app/api/pagos/verificar",
           {
             method: "POST",
             headers: {
@@ -28,11 +31,15 @@ const PagoExitoso = () => {
           }
         );
 
+        // 🔥 VALIDAR RESPUESTA ANTES DE PARSEAR
+        if (!response.ok) {
+          const text = await response.text();
+          throw new Error(text || "Error verificando pago");
+        }
+
         const data = await response.json();
 
-        if (!response.ok) {
-          throw new Error(data.message || "Error verificando pago");
-        }
+        console.log("Respuesta backend:", data);
 
         setMensaje("✅ Pago realizado con éxito. Revisa tu correo para acceder.");
 
