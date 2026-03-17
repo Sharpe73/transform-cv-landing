@@ -1,29 +1,75 @@
 import "./App.css";
+import { useState } from "react";
+import PagoExitoso from "./pages/PagoExitoso";
 
 function App() {
 
-  // 🔥 FUNCIÓN PARA CONTRATAR (AHORA CON PAGO REAL)
-  const contratarPlan = async (plan) => {
-    try {
-      console.log("💸 Iniciando pago plan:", plan);
+  // 🔥 DETECTAR RUTA (SIN ROUTER)
+  const currentPath = window.location.pathname;
 
-      const response = await fetch("https://tranform-cv-production.up.railway.app/api/pagos/crear-checkout", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          plan: plan,
-          email: "cliente@test.com", // 🔜 después lo pedimos en un formulario
-        }),
+  if (currentPath === "/pago-exitoso") {
+    return <PagoExitoso />;
+  }
+
+  const [mostrarForm, setMostrarForm] = useState(false);
+  const [planSeleccionado, setPlanSeleccionado] = useState("");
+
+  const [formData, setFormData] = useState({
+    empresa: "",
+    nombre: "",
+    apellido: "",
+    email: "",
+  });
+
+  // 👉 Abrir formulario
+  const abrirFormulario = (plan) => {
+    setPlanSeleccionado(plan);
+    setMostrarForm(true);
+  };
+
+  // 👉 Manejar inputs
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  // 🔥 FUNCIÓN PARA CONTRATAR
+  const contratarPlan = async () => {
+    try {
+      const { empresa, nombre, apellido, email } = formData;
+
+      if (!empresa || !nombre || !apellido || !email) {
+        alert("⚠️ Completa todos los campos");
+        return;
+      }
+
+      console.log("💸 Iniciando pago:", {
+        plan: planSeleccionado,
+        ...formData,
       });
+
+      const response = await fetch(
+        "https://tranform-cv-production.up.railway.app/api/pagos/crear-checkout",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            plan: planSeleccionado,
+            empresa,
+            nombre,
+            apellido,
+            email,
+          }),
+        }
+      );
 
       const data = await response.json();
 
-      console.log("Respuesta MercadoPago:", data);
-
       if (data.init_point) {
-        // 🚀 REDIRECCIÓN A MERCADOPAGO
         window.location.href = data.init_point;
       } else {
         alert("❌ Error al iniciar el pago");
@@ -37,7 +83,7 @@ function App() {
 
   return (
     <div className="container">
-      
+
       {/* NAVBAR */}
       <nav className="navbar">
         <h2>Transform CV</h2>
@@ -54,7 +100,9 @@ function App() {
         <p>Automatiza, optimiza y profesionaliza tus currículums.</p>
         <button
           className="btn-primary"
-          onClick={() => document.getElementById("planes").scrollIntoView({ behavior: "smooth" })}
+          onClick={() =>
+            document.getElementById("planes").scrollIntoView({ behavior: "smooth" })
+          }
         >
           Ver Planes
         </button>
@@ -77,7 +125,7 @@ function App() {
               <li>✔ Formato profesional</li>
               <li>✔ Exportación PDF</li>
             </ul>
-            <button onClick={() => contratarPlan("basico")}>
+            <button onClick={() => abrirFormulario("basico")}>
               Empezar ahora
             </button>
           </div>
@@ -94,7 +142,7 @@ function App() {
               <li>✔ IA optimizada</li>
               <li>✔ Exportación PDF + Word</li>
             </ul>
-            <button onClick={() => contratarPlan("avanzado")}>
+            <button onClick={() => abrirFormulario("avanzado")}>
               Empezar ahora
             </button>
           </div>
@@ -110,13 +158,58 @@ function App() {
               <li>✔ IA avanzada</li>
               <li>✔ Soporte prioritario</li>
             </ul>
-            <button onClick={() => contratarPlan("premium")}>
+            <button onClick={() => abrirFormulario("premium")}>
               Empezar ahora
             </button>
           </div>
 
         </div>
       </section>
+
+      {/* MODAL FORM */}
+      {mostrarForm && (
+        <div className="modal">
+          <div className="modal-content">
+            <h2>Completa tus datos</h2>
+
+            <input
+              type="text"
+              name="empresa"
+              placeholder="Nombre de la empresa"
+              onChange={handleChange}
+            />
+
+            <input
+              type="text"
+              name="nombre"
+              placeholder="Nombre"
+              onChange={handleChange}
+            />
+
+            <input
+              type="text"
+              name="apellido"
+              placeholder="Apellido"
+              onChange={handleChange}
+            />
+
+            <input
+              type="email"
+              name="email"
+              placeholder="Correo electrónico"
+              onChange={handleChange}
+            />
+
+            <button onClick={contratarPlan}>
+              Continuar al pago
+            </button>
+
+            <button onClick={() => setMostrarForm(false)}>
+              Cancelar
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* CONTACTO */}
       <section id="contacto" className="contacto">
