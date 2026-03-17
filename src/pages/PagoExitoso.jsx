@@ -31,7 +31,7 @@ const PagoExitoso = () => {
           }
         );
 
-        // 🔥 VALIDAR RESPUESTA ANTES DE PARSEAR
+        
         if (!response.ok) {
           const text = await response.text();
           throw new Error(text || "Error verificando pago");
