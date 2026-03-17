@@ -21,10 +21,15 @@ function App() {
     email: "",
   });
 
-  // 👉 Abrir formulario
+  // 👉 Abrir modal
   const abrirFormulario = (plan) => {
     setPlanSeleccionado(plan);
     setMostrarForm(true);
+  };
+
+  // 👉 Cerrar modal
+  const cerrarModal = () => {
+    setMostrarForm(false);
   };
 
   // 👉 Manejar inputs
@@ -166,10 +171,12 @@ function App() {
         </div>
       </section>
 
-      {/* MODAL FORM */}
+      {/* 🔥 MODAL PROFESIONAL */}
       {mostrarForm && (
-        <div className="modal">
-          <div className="modal-content">
+        <div className="modal-overlay">
+
+          <div className="modal">
+
             <h2>Completa tus datos</h2>
 
             <input
@@ -200,14 +207,18 @@ function App() {
               onChange={handleChange}
             />
 
-            <button onClick={contratarPlan}>
-              Continuar al pago
-            </button>
+            <div className="modal-buttons">
+              <button onClick={contratarPlan}>
+                Continuar al pago
+              </button>
 
-            <button onClick={() => setMostrarForm(false)}>
-              Cancelar
-            </button>
+              <button className="cancel" onClick={cerrarModal}>
+                Cancelar
+              </button>
+            </div>
+
           </div>
+
         </div>
       )}
 
