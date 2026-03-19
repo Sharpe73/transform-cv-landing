@@ -52,15 +52,16 @@ body {
 
 .hero-left h1 {
   font-size: 44px;
-  font-weight: 800;
+  font-weight: 700;
+  letter-spacing: -0.5px;
   line-height: 1.1;
   margin-bottom: 20px;
-  color: #1e293b;
+  color: #0f172a;
 }
 
 .hero-left p {
   font-size: 18px;
-  color: #555;
+  color: #64748b;
   margin-bottom: 30px;
 }
 
