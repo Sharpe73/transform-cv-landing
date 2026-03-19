@@ -21,7 +21,6 @@ body {
   border-bottom: 1px solid #eef2f7;
 }
 
-/* LOGO / MARCA */
 .navbar h2 {
   font-weight: 800;
   font-size: 22px;
@@ -32,7 +31,6 @@ body {
   gap: 10px;
 }
 
-/* LINKS */
 .nav-links a {
   margin: 0 12px;
   text-decoration: none;
@@ -64,7 +62,6 @@ body {
   flex-wrap: wrap;
 }
 
-/* TEXTO */
 .hero-left {
   flex: 1;
   min-width: 320px;
@@ -86,7 +83,6 @@ body {
   margin-bottom: 30px;
 }
 
-/* BOTÓN */
 .btn-primary {
   background: #1976d2;
   color: white;
@@ -104,7 +100,6 @@ body {
   box-shadow: 0 8px 20px rgba(25,118,210,0.3);
 }
 
-/* VISUAL DERECHA */
 .hero-right {
   flex: 1;
   min-width: 320px;
@@ -113,24 +108,33 @@ body {
   align-items: center;
 }
 
-/* CONTENEDOR TARJETAS */
 .hero-cards {
   position: relative;
   width: 320px;
   height: 260px;
 }
 
-/* TARJETAS */
+/* ===================================== */
+/* 🔥 TARJETAS FLOTANTES (MEJORADAS) */
+/* ===================================== */
+
 .floating-card {
   position: absolute;
-  background: rgba(255,255,255,0.9);
-  backdrop-filter: blur(8px);
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
   padding: 14px 18px;
   border-radius: 14px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
   font-size: 14px;
   font-weight: 500;
   white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+/* 🔥 HOVER PRO */
+.floating-card:hover {
+  transform: scale(1.07) translateY(-5px);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.25);
 }
 
 /* POSICIONES */
