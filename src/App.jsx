@@ -99,20 +99,20 @@ function App() {
         </div>
       </nav>
 
-      {/* 🔥 HERO PRO */}
+      {/* 🔥 HERO MEJORADO (SIN CSS AÚN) */}
       <section id="inicio" className="hero-pro">
 
-        <div className="hero-content">
+        <div className="hero-container">
 
-          {/* IZQUIERDA */}
-          <div className="hero-text">
+          {/* TEXTO */}
+          <div className="hero-left">
             <h1>
               Convierte cualquier CV en un formato profesional en segundos
             </h1>
 
             <p>
               Automatiza tu proceso con inteligencia artificial. 
-              Ahorra horas de trabajo y entrega CVs listos para enviar.
+              Ahorra horas de trabajo y genera CVs listos para enviar.
             </p>
 
             <button
@@ -125,19 +125,23 @@ function App() {
             </button>
           </div>
 
-          {/* DERECHA */}
-          <div className="hero-visual">
+          {/* VISUAL */}
+          <div className="hero-right">
 
-            <div className="card-floating card-1">
-              📄 CV Original
-            </div>
+            <div className="hero-cards">
 
-            <div className="card-floating card-2">
-              🤖 Procesando con IA...
-            </div>
+              <div className="floating-card">
+                📄 CV Original
+              </div>
 
-            <div className="card-floating card-3">
-              ✅ CV Profesional listo
+              <div className="floating-card">
+                🤖 Analizando con IA...
+              </div>
+
+              <div className="floating-card">
+                ✅ CV Profesional listo
+              </div>
+
             </div>
 
           </div>

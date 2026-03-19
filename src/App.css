@@ -25,39 +25,40 @@ body {
 }
 
 /* ===================================== */
-/* 🔥 HERO PRO */
+/* 🔥 HERO PRO REAL (CORREGIDO + PASO 2) */
 /* ===================================== */
 
 .hero-pro {
-  padding: 100px 20px;
-  background: linear-gradient(135deg, #f5f7fa, #e4ecf7);
+  padding: 120px 20px;
+  background: linear-gradient(180deg, #f7f9fc 0%, #eef3fb 100%);
 }
 
-.hero-content {
+.hero-container {
   max-width: 1200px;
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 40px;
+  gap: 60px;
   flex-wrap: wrap;
 }
 
 /* TEXTO */
-.hero-text {
+.hero-left {
   flex: 1;
-  min-width: 300px;
+  min-width: 320px;
   text-align: left;
 }
 
-.hero-text h1 {
-  font-size: 42px;
-  font-weight: 700;
+.hero-left h1 {
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1.1;
   margin-bottom: 20px;
   color: #1a1a1a;
 }
 
-.hero-text p {
+.hero-left p {
   font-size: 18px;
   color: #555;
   margin-bottom: 30px;
@@ -67,9 +68,9 @@ body {
 .btn-primary {
   background: #1976d2;
   color: white;
-  padding: 14px 28px;
+  padding: 14px 30px;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
   font-weight: 600;
   transition: 0.3s;
@@ -79,45 +80,64 @@ body {
   background: #125ea8;
 }
 
-/* VISUAL */
-.hero-visual {
+/* VISUAL DERECHA */
+.hero-right {
   flex: 1;
-  min-width: 300px;
-  position: relative;
-  height: 320px;
+  min-width: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* TARJETAS FLOTANTES */
-.card-floating {
+/* CONTENEDOR TARJETAS */
+.hero-cards {
+  position: relative;
+  width: 320px;
+  height: 260px;
+}
+
+/* TARJETAS */
+.floating-card {
   position: absolute;
   background: white;
-  padding: 16px 20px;
-  border-radius: 12px;
-  box-shadow: 0px 12px 30px rgba(0,0,0,0.12);
+  padding: 14px 18px;
+  border-radius: 14px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
   font-size: 14px;
   font-weight: 500;
-  transition: 0.3s;
+  white-space: nowrap;
 }
 
-/* POSICIONES */
-.card-1 {
-  top: 20px;
+/* POSICIÓN CORRECTA (YA NO SE VEN MAL) */
+.floating-card:nth-child(1) {
+  top: 0;
+  left: 0;
+  animation: floatUp 4s ease-in-out infinite;
+}
+
+.floating-card:nth-child(2) {
+  top: 90px;
+  right: 0;
+  animation: floatDown 5s ease-in-out infinite;
+}
+
+.floating-card:nth-child(3) {
+  bottom: 0;
   left: 40px;
+  animation: floatUp 4.5s ease-in-out infinite;
 }
 
-.card-2 {
-  top: 120px;
-  left: 120px;
+/* 🔥 ANIMACIONES REALES (PASO 2) */
+@keyframes floatUp {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
 }
 
-.card-3 {
-  top: 220px;
-  left: 20px;
-}
-
-/* HOVER EFECTO */
-.card-floating:hover {
-  transform: translateY(-5px) scale(1.03);
+@keyframes floatDown {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(12px); }
+  100% { transform: translateY(0px); }
 }
 
 /* ===================================== */
