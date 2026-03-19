@@ -4,7 +4,6 @@ import PagoExitoso from "./pages/PagoExitoso";
 
 function App() {
 
-  // 🔥 DETECTAR RUTA (SIN ROUTER)
   const currentPath = window.location.pathname;
 
   if (currentPath === "/pago-exitoso") {
@@ -21,18 +20,15 @@ function App() {
     email: "",
   });
 
-  // 👉 Abrir modal
   const abrirFormulario = (plan) => {
     setPlanSeleccionado(plan);
     setMostrarForm(true);
   };
 
-  // 👉 Cerrar modal
   const cerrarModal = () => {
     setMostrarForm(false);
   };
 
-  // 👉 Manejar inputs
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -40,7 +36,6 @@ function App() {
     });
   };
 
-  // 🔥 FUNCIÓN PARA CONTRATAR
   const contratarPlan = async () => {
     try {
       const { empresa, nombre, apellido, email } = formData;
@@ -49,11 +44,6 @@ function App() {
         alert("⚠️ Completa todos los campos");
         return;
       }
-
-      console.log("💸 Iniciando pago:", {
-        plan: planSeleccionado,
-        ...formData,
-      });
 
       const response = await fetch(
         "https://tranform-cv-production.up.railway.app/api/pagos/crear-checkout",
@@ -99,12 +89,10 @@ function App() {
         </div>
       </nav>
 
-      {/* 🔥 HERO MEJORADO (SIN CSS AÚN) */}
+      {/* HERO */}
       <section id="inicio" className="hero-pro">
-
         <div className="hero-container">
 
-          {/* TEXTO */}
           <div className="hero-left">
             <h1>
               Convierte cualquier CV en un formato profesional en segundos
@@ -125,9 +113,7 @@ function App() {
             </button>
           </div>
 
-          {/* VISUAL */}
           <div className="hero-right">
-
             <div className="hero-cards">
 
               <div className="floating-card">
@@ -143,11 +129,22 @@ function App() {
               </div>
 
             </div>
-
           </div>
 
         </div>
+      </section>
 
+      {/* 🔥 NUEVA SECCIÓN: CONFIANZA */}
+      <section className="confianza">
+        <p className="confianza-text">
+          Usado por profesionales, reclutadores y empresas
+        </p>
+
+        <div className="confianza-logos">
+          <span>🚀 +1.000 CVs procesados</span>
+          <span>⭐ 4.9/5 satisfacción</span>
+          <span>🏢 Empresas en crecimiento</span>
+        </div>
       </section>
 
       {/* PLANES */}
@@ -211,7 +208,6 @@ function App() {
       {/* MODAL */}
       {mostrarForm && (
         <div className="modal-overlay">
-
           <div className="modal">
 
             <h2>Completa tus datos</h2>
@@ -255,7 +251,6 @@ function App() {
             </div>
 
           </div>
-
         </div>
       )}
 
