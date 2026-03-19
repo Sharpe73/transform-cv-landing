@@ -197,7 +197,7 @@ function App() {
             </p>
             <h2>$29.990 CLP</h2>
             <ul>
-              <li>✔ CVs ilimitados</li>
+              <li>✔ Hasta 100 CVs al mes</li>
               <li>✔ IA avanzada</li>
               <li>✔ Soporte prioritario</li>
             </ul>
