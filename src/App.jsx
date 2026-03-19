@@ -1,7 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import PagoExitoso from "./pages/PagoExitoso";
-import ComoFunciona from "./components/ComoFunciona"; // 👈 NUEVO
+import ComoFunciona from "./components/ComoFunciona";
 
 function App() {
 
@@ -82,7 +82,7 @@ function App() {
 
       {/* NAVBAR */}
       <nav className="navbar">
-        <h2>Transform CV</h2>
+        <h2>🚀 Transform CV</h2>
         <div className="nav-links">
           <a href="#inicio">Inicio</a>
           <a href="#planes">Planes</a>
@@ -135,7 +135,7 @@ function App() {
         </div>
       </section>
 
-      {/* 🔥 NUEVA SECCIÓN: CONFIANZA */}
+      {/* 🔥 CONFIANZA */}
       <section className="confianza">
         <p className="confianza-text">
           Usado por profesionales, reclutadores y empresas
@@ -148,7 +148,7 @@ function App() {
         </div>
       </section>
 
-      {/* 👇 NUEVA SECCIÓN COMO FUNCIONA */}
+      {/* COMO FUNCIONA */}
       <ComoFunciona />
 
       {/* PLANES */}

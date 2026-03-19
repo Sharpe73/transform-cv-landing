@@ -1,27 +1,48 @@
 body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
-  background: #f4f6fb;
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
 }
 
 .container {
   text-align: center;
 }
 
-/* NAVBAR */
+/* ===================================== */
+/* 🔥 NAVBAR (MEJORADO PRO) */
+/* ===================================== */
+
 .navbar {
   display: flex;
   justify-content: space-between;
-  padding: 20px 40px;
+  align-items: center;
+  padding: 20px 60px;
   background: white;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #eef2f7;
 }
 
+/* LOGO / MARCA */
+.navbar h2 {
+  font-weight: 800;
+  font-size: 22px;
+  color: #0f172a;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* LINKS */
 .nav-links a {
-  margin: 0 10px;
+  margin: 0 12px;
   text-decoration: none;
   color: #475569;
   font-weight: 500;
+  transition: 0.2s;
+}
+
+.nav-links a:hover {
+  color: #1976d2;
 }
 
 /* ===================================== */
@@ -321,7 +342,6 @@ body {
   color: #475569;
 }
 
-/* BOTÓN */
 .card button {
   padding: 12px;
   width: 100%;
@@ -338,14 +358,12 @@ body {
   background: #125ea8;
 }
 
-/* DESTACADO */
 .destacado {
   border: 2px solid #1976d2;
   transform: scale(1.08);
   box-shadow: 0 20px 40px rgba(25,118,210,0.2);
 }
 
-/* BADGE */
 .badge {
   position: absolute;
   top: -10px;
