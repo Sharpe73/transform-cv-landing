@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import PagoExitoso from "./pages/PagoExitoso";
+import ComoFunciona from "./components/ComoFunciona"; // 👈 NUEVO
 
 function App() {
 
@@ -146,6 +147,9 @@ function App() {
           <span>🏢 Empresas en crecimiento</span>
         </div>
       </section>
+
+      {/* 👇 NUEVA SECCIÓN COMO FUNCIONA */}
+      <ComoFunciona />
 
       {/* PLANES */}
       <section id="planes" className="planes">
