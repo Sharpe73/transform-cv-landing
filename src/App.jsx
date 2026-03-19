@@ -99,18 +99,51 @@ function App() {
         </div>
       </nav>
 
-      {/* HERO */}
-      <section id="inicio" className="hero">
-        <h1>Transforma CVs en segundos con IA</h1>
-        <p>Automatiza, optimiza y profesionaliza tus currículums.</p>
-        <button
-          className="btn-primary"
-          onClick={() =>
-            document.getElementById("planes").scrollIntoView({ behavior: "smooth" })
-          }
-        >
-          Ver Planes
-        </button>
+      {/* 🔥 HERO PRO */}
+      <section id="inicio" className="hero-pro">
+
+        <div className="hero-content">
+
+          {/* IZQUIERDA */}
+          <div className="hero-text">
+            <h1>
+              Convierte cualquier CV en un formato profesional en segundos
+            </h1>
+
+            <p>
+              Automatiza tu proceso con inteligencia artificial. 
+              Ahorra horas de trabajo y entrega CVs listos para enviar.
+            </p>
+
+            <button
+              className="btn-primary"
+              onClick={() =>
+                document.getElementById("planes").scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              Comenzar ahora
+            </button>
+          </div>
+
+          {/* DERECHA */}
+          <div className="hero-visual">
+
+            <div className="card-floating card-1">
+              📄 CV Original
+            </div>
+
+            <div className="card-floating card-2">
+              🤖 Procesando con IA...
+            </div>
+
+            <div className="card-floating card-3">
+              ✅ CV Profesional listo
+            </div>
+
+          </div>
+
+        </div>
+
       </section>
 
       {/* PLANES */}
@@ -171,7 +204,7 @@ function App() {
         </div>
       </section>
 
-      {/* 🔥 MODAL PROFESIONAL */}
+      {/* MODAL */}
       {mostrarForm && (
         <div className="modal-overlay">
 
