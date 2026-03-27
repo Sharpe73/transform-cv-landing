@@ -1,17 +1,15 @@
 body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
-  background: #ffffff;
-  color: #0f172a;
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
 }
 
-/* CONTENEDOR */
 .container {
   text-align: center;
 }
 
 /* ===================================== */
-/* 🔥 NAVBAR */
+/* 🔥 NAVBAR (MEJORADO PRO) */
 /* ===================================== */
 
 .navbar {
@@ -19,37 +17,39 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 20px 60px;
-  background: rgba(2, 6, 23, 0.7);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  background: white;
+  border-bottom: 1px solid #eef2f7;
 }
 
 .navbar h2 {
   font-weight: 800;
   font-size: 22px;
-  color: white;
+  color: #0f172a;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .nav-links a {
   margin: 0 12px;
   text-decoration: none;
-  color: #cbd5f5;
+  color: #475569;
   font-weight: 500;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 .nav-links a:hover {
-  color: #38bdf8;
+  color: #1976d2;
 }
 
 /* ===================================== */
 /* 🔥 HERO */
 /* ===================================== */
 
-.hero-pro-dark {
+.hero-pro {
   padding: 120px 20px;
-  background: radial-gradient(circle at top, #0f172a 0%, #020617 100%);
-  color: white;
+  background: linear-gradient(180deg, #f7f9fc 0%, #eef3fb 100%);
 }
 
 .hero-container {
@@ -68,68 +68,44 @@ body {
   text-align: left;
 }
 
-.hero-badge {
-  display: inline-block;
-  background: rgba(56,189,248,0.1);
-  color: #38bdf8;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 12px;
-  margin-bottom: 20px;
-}
-
 .hero-left h1 {
-  font-size: 48px;
-  font-weight: 800;
+  font-size: 44px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
   line-height: 1.1;
   margin-bottom: 20px;
-}
-
-.gradient-text {
-  background: linear-gradient(90deg, #38bdf8, #a855f7);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #0f172a;
 }
 
 .hero-left p {
   font-size: 18px;
-  color: #94a3b8;
+  color: #64748b;
   margin-bottom: 30px;
 }
 
-/* BOTONES */
-
-.hero-buttons {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
 .btn-primary {
-  background: linear-gradient(90deg, #38bdf8, #6366f1);
+  background: #1976d2;
   color: white;
   padding: 14px 30px;
   border: none;
   border-radius: 12px;
   cursor: pointer;
   font-weight: 600;
+  transition: 0.3s;
 }
 
-.btn-secondary {
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.2);
-  color: white;
-  padding: 14px 24px;
-  border-radius: 12px;
-  cursor: pointer;
+.btn-primary:hover {
+  background: #125ea8;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(25,118,210,0.3);
 }
-
-/* HERO CARDS */
 
 .hero-right {
   flex: 1;
+  min-width: 320px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .hero-cards {
@@ -138,30 +114,84 @@ body {
   height: 260px;
 }
 
+/* ===================================== */
+/* 🔥 TARJETAS FLOTANTES PRO REAL */
+/* ===================================== */
+
 .floating-card {
   position: absolute;
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(10px);
+
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
   padding: 14px 18px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+
+  border: 1px solid rgba(255,255,255,0.4);
+
+  box-shadow: 
+    0 20px 60px rgba(0,0,0,0.15),
+    0 0 20px rgba(25,118,210,0.08);
+
   font-size: 14px;
-  color: white;
+  font-weight: 500;
+  white-space: nowrap;
+
+  transition: all 0.4s ease;
 }
 
+/* 🔥 PROFUNDIDAD (CAPAS) */
+.floating-card:nth-child(1) {
+  transform: scale(1.05);
+}
+
+.floating-card:nth-child(2) {
+  transform: scale(0.95);
+}
+
+.floating-card:nth-child(3) {
+  transform: scale(1);
+}
+
+/* 🔥 HOVER PRO */
+.floating-card:hover {
+  transform: scale(1.1) translateY(-6px);
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.25),
+    0 0 30px rgba(25,118,210,0.15);
+}
+
+/* POSICIONES + ANIMACIÓN */
 .floating-card:nth-child(1) {
   top: 0;
   left: 0;
+  animation: floatUp 4s ease-in-out infinite;
 }
 
 .floating-card:nth-child(2) {
   top: 90px;
   right: 0;
+  animation: floatDown 5s ease-in-out infinite;
 }
 
 .floating-card:nth-child(3) {
   bottom: 0;
   left: 40px;
+  animation: floatUp 4.5s ease-in-out infinite;
+}
+
+/* ANIMACIONES */
+@keyframes floatUp {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes floatDown {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(12px); }
+  100% { transform: translateY(0px); }
 }
 
 /* ===================================== */
@@ -169,23 +199,39 @@ body {
 /* ===================================== */
 
 .confianza {
-  padding: 60px 20px;
+  padding: 50px 20px;
   background: #ffffff;
   border-top: 1px solid #eef2f7;
   border-bottom: 1px solid #eef2f7;
+  margin-bottom: 30px;
 }
 
 .confianza-text {
   color: #64748b;
+  font-size: 14px;
   margin-bottom: 20px;
+}
+
+.confianza-logos {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
 .confianza-logos span {
   background: #f1f5f9;
   padding: 10px 18px;
   border-radius: 20px;
-  margin: 5px;
-  display: inline-block;
+  font-size: 14px;
+  color: #334155;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.confianza-logos span:hover {
+  transform: translateY(-3px);
+  background: #e2e8f0;
 }
 
 /* ===================================== */
@@ -197,59 +243,108 @@ body {
   background: #f8fafc;
 }
 
+.como-container {
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+}
+
+.como-funciona h2 {
+  font-size: 32px;
+  color: #0f172a;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.como-sub {
+  color: #64748b;
+  margin-bottom: 50px;
+}
+
+.como-steps {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
 .step {
   background: white;
-  border-radius: 16px;
   padding: 25px;
+  border-radius: 16px;
+  width: 260px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.step:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 
 .step-number {
-  background: linear-gradient(90deg, #38bdf8, #6366f1);
+  width: 40px;
+  height: 40px;
+  background: #1976d2;
   color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin: auto;
+  margin-bottom: 15px;
+}
+
+.step h3 {
+  margin-bottom: 10px;
+  color: #0f172a;
+}
+
+.step p {
+  color: #64748b;
+  font-size: 14px;
 }
 
 /* ===================================== */
-/* 🔥 PLANES (FIX REAL) */
+/* PLANES */
 /* ===================================== */
 
 .planes {
-  padding: 100px 20px;
-  background: #ffffff;
+  padding: 80px 20px;
 }
 
 .planes h2 {
-  font-size: 32px;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
+  color: #0f172a;
   font-weight: 700;
+  letter-spacing: -0.3px;
 }
 
 .cards {
   display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
   justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
 }
-
-/* CARD */
 
 .card {
-  position: relative;
   background: white;
-  padding: 30px 25px;
-  border-radius: 18px;
-  width: 280px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  padding: 25px;
+  border-radius: 16px;
+  width: 260px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  position: relative;
+  transition: 0.3s;
 }
 
-/* TITULOS */
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
 
 .card h3 {
+  margin-bottom: 10px;
   color: #0f172a;
 }
 
@@ -257,17 +352,12 @@ body {
   color: #64748b;
   font-size: 14px;
   margin-bottom: 15px;
-  min-height: 60px;
 }
-
-/* PRECIO */
 
 .card h2 {
-  color: #38bdf8;
+  color: #1976d2;
   margin: 15px 0;
 }
-
-/* LISTA */
 
 .card ul {
   list-style: none;
@@ -279,61 +369,122 @@ body {
 .card ul li {
   margin: 8px 0;
   color: #475569;
-  font-size: 14px;
 }
 
-/* BOTON */
-
 .card button {
-  background: linear-gradient(90deg, #38bdf8, #6366f1);
-  border: none;
-  color: white;
   padding: 12px;
+  width: 100%;
+  border: none;
+  background: #1976d2;
+  color: white;
   border-radius: 10px;
   cursor: pointer;
   font-weight: 600;
+  transition: 0.3s;
 }
 
-/* DESTACADO */
+.card button:hover {
+  background: #125ea8;
+}
 
 .destacado {
-  border: 2px solid #38bdf8;
-  transform: scale(1.05);
+  border: 2px solid #1976d2;
+  transform: scale(1.08);
+  box-shadow: 0 20px 40px rgba(25,118,210,0.2);
 }
-
-/* BADGE BIEN HECHO */
 
 .badge {
   position: absolute;
-  top: -12px;
+  top: -10px;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(90deg, #38bdf8, #6366f1);
+  background: #1976d2;
   color: white;
-  padding: 6px 14px;
+  padding: 5px 12px;
   border-radius: 20px;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: bold;
+}
+
+/* CONTACTO */
+.contacto {
+  padding: 80px 20px;
 }
 
 /* ===================================== */
-/* 🔥 MODAL */
+/* MODAL */
 /* ===================================== */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
 
 .modal {
   background: white;
+  padding: 30px;
+  border-radius: 16px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  animation: fadeIn 0.25s ease;
+}
+
+.modal h2 {
+  margin-bottom: 10px;
   color: #0f172a;
 }
 
 .modal input {
+  padding: 12px;
   border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 14px;
 }
 
-/* ===================================== */
-/* CONTACTO */
-/* ===================================== */
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
 
-.contacto {
-  padding: 80px 20px;
-  background: #ffffff;
+.modal-buttons button {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  width: 48%;
+}
+
+.modal-buttons button:first-child {
+  background: #1976d2;
+  color: white;
+}
+
+.cancel {
+  background: #e53935;
+  color: white;
+}
+
+/* ANIMACIÓN */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
