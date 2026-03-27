@@ -90,42 +90,60 @@ function App() {
         </div>
       </nav>
 
-      {/* HERO */}
-      <section id="inicio" className="hero-pro">
+      {/* HERO NUEVO 🔥 */}
+      <section id="inicio" className="hero-pro-dark">
         <div className="hero-container">
 
           <div className="hero-left">
+
+            <span className="hero-badge">
+              ⚡ Automatización con IA
+            </span>
+
             <h1>
-              Convierte cualquier CV en un formato profesional en segundos
+              Automatiza CVs profesionales <br />
+              <span className="gradient-text">en segundos con IA</span>
             </h1>
 
             <p>
-              Automatiza tu proceso con inteligencia artificial. 
-              Ahorra horas de trabajo y genera CVs listos para enviar.
+              Transforma CVs desordenados en documentos profesionales listos para enviar. 
+              Ahorra horas de trabajo y destaca frente a reclutadores.
             </p>
 
-            <button
-              className="btn-primary"
-              onClick={() =>
-                document.getElementById("planes").scrollIntoView({ behavior: "smooth" })
-              }
-            >
-              Comenzar ahora
-            </button>
+            <div className="hero-buttons">
+              <button
+                className="btn-primary"
+                onClick={() =>
+                  document.getElementById("planes").scrollIntoView({ behavior: "smooth" })
+                }
+              >
+                Transformar mi CV 🚀
+              </button>
+
+              <button
+                className="btn-secondary"
+                onClick={() =>
+                  document.getElementById("como-funciona").scrollIntoView({ behavior: "smooth" })
+                }
+              >
+                Ver cómo funciona
+              </button>
+            </div>
+
           </div>
 
           <div className="hero-right">
             <div className="hero-cards">
 
-              <div className="floating-card">
+              <div className="floating-card glow">
                 📄 CV Original
               </div>
 
-              <div className="floating-card">
+              <div className="floating-card glow">
                 🤖 Analizando con IA...
               </div>
 
-              <div className="floating-card">
+              <div className="floating-card glow success">
                 ✅ CV Profesional listo
               </div>
 
@@ -149,7 +167,9 @@ function App() {
       </section>
 
       {/* COMO FUNCIONA */}
-      <ComoFunciona />
+      <div id="como-funciona">
+        <ComoFunciona />
+      </div>
 
       {/* PLANES */}
       <section id="planes" className="planes">
