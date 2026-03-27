@@ -11,7 +11,7 @@ body {
 }
 
 /* ===================================== */
-/* 🔥 NAVBAR (PRO MIX: DARK SUAVE) */
+/* 🔥 NAVBAR */
 /* ===================================== */
 
 .navbar {
@@ -43,7 +43,7 @@ body {
 }
 
 /* ===================================== */
-/* 🔥 HERO (DARK PRO BIEN HECHO) */
+/* 🔥 HERO */
 /* ===================================== */
 
 .hero-pro-dark {
@@ -113,12 +113,6 @@ body {
   border-radius: 12px;
   cursor: pointer;
   font-weight: 600;
-  transition: 0.3s;
-}
-
-.btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(56,189,248,0.4);
 }
 
 .btn-secondary {
@@ -128,11 +122,6 @@ body {
   padding: 14px 24px;
   border-radius: 12px;
   cursor: pointer;
-}
-
-.btn-secondary:hover {
-  border-color: #38bdf8;
-  color: #38bdf8;
 }
 
 /* HERO CARDS */
@@ -158,41 +147,25 @@ body {
   border: 1px solid rgba(255,255,255,0.1);
   font-size: 14px;
   color: white;
-  transition: 0.4s;
 }
 
 .floating-card:nth-child(1) {
   top: 0;
   left: 0;
-  animation: floatUp 4s infinite;
 }
 
 .floating-card:nth-child(2) {
   top: 90px;
   right: 0;
-  animation: floatDown 5s infinite;
 }
 
 .floating-card:nth-child(3) {
   bottom: 0;
   left: 40px;
-  animation: floatUp 4.5s infinite;
-}
-
-@keyframes floatUp {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-  100% { transform: translateY(0); }
-}
-
-@keyframes floatDown {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(12px); }
-  100% { transform: translateY(0); }
 }
 
 /* ===================================== */
-/* 🔥 CONFIANZA (CLARO PRO) */
+/* 🔥 CONFIANZA */
 /* ===================================== */
 
 .confianza {
@@ -213,15 +186,10 @@ body {
   border-radius: 20px;
   margin: 5px;
   display: inline-block;
-  transition: 0.3s;
-}
-
-.confianza-logos span:hover {
-  transform: translateY(-3px);
 }
 
 /* ===================================== */
-/* 🔥 COMO FUNCIONA (CLARO) */
+/* 🔥 COMO FUNCIONA */
 /* ===================================== */
 
 .como-funciona {
@@ -242,34 +210,44 @@ body {
 }
 
 /* ===================================== */
-/* 🔥 PLANES (CLARO PRO) */
+/* 🔥 PLANES (FIX REAL) */
 /* ===================================== */
 
 .planes {
-  padding: 80px 20px;
+  padding: 100px 20px;
   background: #ffffff;
+}
+
+.planes h2 {
+  font-size: 32px;
+  margin-bottom: 50px;
+  font-weight: 700;
 }
 
 .cards {
   display: flex;
-  gap: 25px;
+  gap: 30px;
   flex-wrap: wrap;
   justify-content: center;
 }
 
+/* CARD */
+
 .card {
+  position: relative;
   background: white;
-  padding: 25px;
-  border-radius: 16px;
-  width: 260px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  transition: 0.3s;
+  padding: 30px 25px;
+  border-radius: 18px;
+  width: 280px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
 }
 
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-}
+/* TITULOS */
 
 .card h3 {
   color: #0f172a;
@@ -277,15 +255,34 @@ body {
 
 .card .desc {
   color: #64748b;
+  font-size: 14px;
+  margin-bottom: 15px;
+  min-height: 60px;
 }
+
+/* PRECIO */
 
 .card h2 {
   color: #38bdf8;
+  margin: 15px 0;
+}
+
+/* LISTA */
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin-bottom: 20px;
 }
 
 .card ul li {
+  margin: 8px 0;
   color: #475569;
+  font-size: 14px;
 }
+
+/* BOTON */
 
 .card button {
   background: linear-gradient(90deg, #38bdf8, #6366f1);
@@ -294,16 +291,29 @@ body {
   padding: 12px;
   border-radius: 10px;
   cursor: pointer;
+  font-weight: 600;
 }
+
+/* DESTACADO */
 
 .destacado {
   border: 2px solid #38bdf8;
   transform: scale(1.05);
 }
 
+/* BADGE BIEN HECHO */
+
 .badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
   background: linear-gradient(90deg, #38bdf8, #6366f1);
   color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 /* ===================================== */
