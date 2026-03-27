@@ -90,7 +90,7 @@ function App() {
         </div>
       </nav>
 
-      {/* HERO NUEVO 🔥 */}
+      {/* HERO */}
       <section id="inicio" className="hero-pro-dark">
         <div className="hero-container">
 
@@ -153,7 +153,7 @@ function App() {
         </div>
       </section>
 
-      {/* 🔥 CONFIANZA */}
+      {/* CONFIANZA */}
       <section className="confianza">
         <p className="confianza-text">
           Usado por profesionales, reclutadores y empresas
@@ -171,58 +171,63 @@ function App() {
         <ComoFunciona />
       </div>
 
-      {/* PLANES */}
+      {/* PLANES PRO 🔥 */}
       <section id="planes" className="planes">
-        <h2>Encuentra el plan ideal para ti</h2>
+        <h2>Elige cómo quieres transformar tus CVs</h2>
 
         <div className="cards">
 
+          {/* BASICO */}
           <div className="card">
+            <span className="badge">Para empezar</span>
             <h3>Plan Básico</h3>
             <p className="desc">
-              Ideal para personas que quieren transformar CVs de forma simple.
+              Ideal si quieres probar la plataforma y generar tus primeros CVs profesionales.
             </p>
             <h2>$9.990 CLP</h2>
             <ul>
-              <li>✔ Hasta 10 CVs al mes</li>
-              <li>✔ Formato profesional</li>
-              <li>✔ Exportación PDF</li>
+              <li>✔ Genera hasta 10 CVs profesionales al mes</li>
+              <li>✔ Formato listo para enviar a reclutadores</li>
+              <li>✔ Exportación en PDF optimizado</li>
             </ul>
             <button onClick={() => abrirFormulario("basico")}>
-              Empezar ahora
+              Quiero este plan 🚀
             </button>
           </div>
 
+          {/* AVANZADO */}
           <div className="card destacado">
-            <span className="badge">Recomendado</span>
+            <span className="badge">🔥 Más vendido</span>
             <h3>Plan Avanzado</h3>
             <p className="desc">
-              Perfecto para profesionales y equipos pequeños.
+              Perfecto si postulas constantemente o trabajas con múltiples CVs.
             </p>
             <h2>$19.990 CLP</h2>
             <ul>
-              <li>✔ Hasta 50 CVs al mes</li>
-              <li>✔ IA optimizada</li>
-              <li>✔ Exportación PDF + Word</li>
+              <li>✔ Hasta 50 CVs optimizados con IA al mes</li>
+              <li>✔ Mejora automática del contenido</li>
+              <li>✔ Descarga en PDF y Word profesional</li>
             </ul>
             <button onClick={() => abrirFormulario("avanzado")}>
-              Empezar ahora
+              Empezar ahora 🚀
             </button>
           </div>
 
+          {/* PREMIUM */}
           <div className="card">
+            <span className="badge">Para empresas</span>
             <h3>Plan Premium</h3>
             <p className="desc">
-              Para empresas que necesitan alto volumen y automatización.
+              Para equipos, reclutadores o alto volumen de procesamiento.
             </p>
             <h2>$29.990 CLP</h2>
             <ul>
-              <li>✔ Hasta 100 CVs al mes</li>
-              <li>✔ IA avanzada</li>
+              <li>✔ Hasta 100 CVs mensuales automatizados</li>
+              <li>✔ IA avanzada para mejores resultados</li>
               <li>✔ Soporte prioritario</li>
             </ul>
             <button onClick={() => abrirFormulario("premium")}>
-              Empezar ahora
+              Activar plan 🚀
             </button>
           </div>
 
@@ -236,33 +241,10 @@ function App() {
 
             <h2>Completa tus datos</h2>
 
-            <input
-              type="text"
-              name="empresa"
-              placeholder="Nombre de la empresa"
-              onChange={handleChange}
-            />
-
-            <input
-              type="text"
-              name="nombre"
-              placeholder="Nombre"
-              onChange={handleChange}
-            />
-
-            <input
-              type="text"
-              name="apellido"
-              placeholder="Apellido"
-              onChange={handleChange}
-            />
-
-            <input
-              type="email"
-              name="email"
-              placeholder="Correo electrónico"
-              onChange={handleChange}
-            />
+            <input type="text" name="empresa" placeholder="Nombre de la empresa" onChange={handleChange} />
+            <input type="text" name="nombre" placeholder="Nombre" onChange={handleChange} />
+            <input type="text" name="apellido" placeholder="Apellido" onChange={handleChange} />
+            <input type="email" name="email" placeholder="Correo electrónico" onChange={handleChange} />
 
             <div className="modal-buttons">
               <button onClick={contratarPlan}>
